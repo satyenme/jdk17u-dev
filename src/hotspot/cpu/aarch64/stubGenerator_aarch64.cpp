@@ -80,7 +80,7 @@ class StubGenerator: public StubCodeGenerator {
 #ifdef PRODUCT
 #define inc_counter_np(counter) ((void)0)
 #else
-  void inc_counter_np_(uint& counter) {
+  void inc_counter_np_(int& counter) {
     __ incrementw(ExternalAddress((address)&counter));
   }
 #define inc_counter_np(counter) \
